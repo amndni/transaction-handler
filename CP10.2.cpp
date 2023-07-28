@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
+#include<stdlib.h>
 struct customer
 {
 	int ac,bal;
@@ -8,28 +9,29 @@ struct customer
 int main()
 {
 	int i,n,ch,acn,bala;
-	printf("enter maximium number of customers:");
+	printf("Enter maximum number of customers:\n");
 	scanf("%d",&n);
 	for(i=0;i<n;i++)
 	{
-		printf("enter %d customer account number, balance, and name:",i+1);
+		printf("\nEnter customer %d's Account Number, Balance, and Name:\n",i+1);
 		scanf("%d %d %s",&a[i].ac, &a[i].bal, &a[i].name);
 	}
 	for(i=0;i<n;i++)
 	{
 		if(a[i].bal<1000)
 		{
-			printf("Account number=%d\t Balance=%d\t Name=%s\n",a[i].ac,a[i].bal,a[i].name);
+			printf("\nAccount Number=%d\t Balance=%d\t Name=%s\n",a[i].ac,a[i].bal,a[i].name);
 		}
 	}
-	printf("Deposit or Withdrawal?");
-	printf("Press 0 for deposit and 1 for withdrawal");
+	printf("\nDeposit or Withdrawal?\n");
+	printf("\nPress 1 for deposit and 0 for withdrawal\n");
 	scanf("%d",&ch);
+	fflush(stdin);
 	if(ch==1)
 	{
-		printf("enter your account number=\n");
+		printf("\nEnter your account number=\n");
 		scanf("%d",&acn);
-		printf("enter balance to be deposited=\n");
+		printf("\nEnter balance to be deposited=\n");
 		scanf("%d",&bala);
 		for(i=0;i<n;i++)
 		{
@@ -41,9 +43,9 @@ int main()
 	}
 	if(ch==0)
 	{
-		printf("enter your account number=\n");
+		printf("\nEnter your account number=\n");
 		scanf("%d",&acn);
-		printf("enter balance to be withdrawn=\n");
+		printf("\nEnter balance to be withdrawn=\n");
 		scanf("%d",&bala);
 		for(i=0;i<n;i++)
 		{
@@ -51,7 +53,7 @@ int main()
 			{
 				if(a[i].bal<bala)
 				{
-					printf("insufficient balance");
+					printf("\nInsufficient Balance\n");
 				}
 				else
 				{
@@ -60,10 +62,10 @@ int main()
 			}
 		}
 	}
-	printf("your account information after transcation=\n");
+	printf("\nYour account information after transcation:\n");
 	for(i=0;i<n;i++)
 	{
-		printf("account number=%d\t balance=%d\t name=%s\n",a[i].ac,a[i].bal,a[i].name);
+		printf("\nAccount Number=%d\t Balance=%d\t Name=%s\n",a[i].ac,a[i].bal,a[i].name);
 	}
 	getch();
 }
